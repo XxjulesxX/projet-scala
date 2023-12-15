@@ -1,5 +1,8 @@
-@main def hello: Unit =
-  println("Hello world!")
-  println(msg)
+object Main extends App {
+  val cheminFichierCSV = "chemin/vers/le/fichier/Tigres.csv" // Remplacez par le chemin réel de votre fichier CSV
+  val tigres = ParseurCSV.parseCSV(cheminFichierCSV)
 
-def msg = "I was compiled by Scala 3. :)"
+  tigres.foreach { tigre =>
+    println(s"Nom: ${tigre.nom.getOrElse("Inconnu")}, Age: ${tigre.age.getOrElse("Non spécifié")}, Habitat: ${tigre.habitat.getOrElse("Non spécifié")}")
+  }
+}
