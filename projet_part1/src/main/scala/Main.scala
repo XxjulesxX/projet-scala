@@ -1,5 +1,5 @@
 object Main extends App {
-  val cheminFichierCSV = "chemin/vers/le/fichier/Tigres.csv" 
+  val cheminFichierCSV = "ressource/Tigres.csv" 
   val tigres = ParseurCSV.parseCSV(cheminFichierCSV)
 
   tigres.foreach { tigre =>
